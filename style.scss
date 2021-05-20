@@ -5,6 +5,10 @@ html {
 body {
   color: rgb(34, 34, 34) !important;
 }
-#outershell {
-  max-width: 905px;
+#content {
+  max-width: 895px;
+
+  .content {
+    padding: 10px;
+  }
 }
