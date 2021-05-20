@@ -5,7 +5,6 @@ html {
 
 body {
   color: #222222 !important;
-  background-color: cornsilk;
 }
 
 * {
@@ -20,8 +19,6 @@ body {
   margin: auto;
   max-width: 895px;
   background-color: white;
-  -webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
 }
 #content .content {
   padding: 20px;
@@ -30,7 +27,7 @@ body {
   width: 100%;
 }
 #content .content .jn-head h1 {
-  font-size: clamp(2rem, 3vw, 4vw);
+  font-size: clamp(2rem, 5vw, 4rem);
   margin: 1rem;
 }
 #content .content .jn-head .jn-overview {
@@ -90,28 +87,21 @@ body {
 #content .content main aside {
   width: 30%;
 }
-#content .content main aside .jn-employer {
+#content .content main aside > div {
   padding: 5%;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 0;
 }
-#content .content main aside .jn-employer img {
+#content .content main aside > div img {
   width: 100%;
   height: auto;
   margin-bottom: 5%;
 }
-#content .content main aside .jn-map {
+#content .content main aside div + div {
   margin-top: 1rem;
-  padding: 5%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
 }
-#content .content main aside .jn-map h3 {
+#content .content main aside div + div h3 {
   margin-top: 0;
-}
-#content .content main aside .jn-map img {
-  width: 100%;
-  height: auto;
 }
 #content .content button {
   margin: 2rem 1rem;
@@ -133,5 +123,50 @@ body {
   color: cornsilk;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
           box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width : 768px) {
+  #content .content .jn-head .jn-overview p {
+    font-size: 1rem;
+  }
+  #content .content main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #content .content main section {
+    padding: 3rem 0 1rem;
+    margin: 0;
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  #content .content main aside {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    border: none;
+    text-align: center;
+  }
+  #content .content main aside > div {
+    border: none;
+    padding: 2rem 1rem;
+  }
+  #content .content main aside > div img {
+    width: 80%;
+    margin: auto;
+    margin: 1rem;
+  }
+  #content .content button {
+    margin: 2rem 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    white-space: nowrap;
+  }
 }
 /*# sourceMappingURL=style.css.map */
