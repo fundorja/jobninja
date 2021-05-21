@@ -1,10 +1,13 @@
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(6.5px, 0.95vw, 10.7px);
+  font-weight: 600;
+  color: #575757;
+  line-height: 1.43;
 }
 
 body {
-  color: #222222 !important;
+  color: #575757;
 }
 
 * {
@@ -12,20 +15,79 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  text-decoration: none;
 }
 
-#content {
+strong {
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.red {
+  color: #e30613;
+}
+
+header {
+  width: 100%;
+}
+header img {
+  width: 100%;
+}
+
+main {
   margin: auto;
-  max-width: 895px;
+  max-width: 200mm;
+  height: 260mm;
   background-color: white;
+  background-image: url("./img/dummy.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+main .jn-intro {
+  padding: 4.8mm 4.8mm 0;
+}
+main .jn-intro p {
+  margin-bottom: 10px;
+}
+main .jn-intro h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 3mm;
+}
+main .jn-main {
+  padding: 0 4.8mm;
+}
+main .jn-main h2 {
+  font-size: 1rem;
+  color: #e30613;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+main .jn-main h2 ~ h2 {
+  margin-top: 3.2rem;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2mm 4.8mm 4.8mm;
+}
+footer .logo {
+  width: 50%;
+}
+footer .logo img {
+  width: 100%;
+}
+footer .address {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: 12%;
 }
 
 @media only screen and (max-width : 768px) {
-  #content .jn-head .jn-overview p {
-    font-size: 1rem;
-  }
-  #content main {
+  main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
