@@ -1,6 +1,10 @@
+:root {
+  --paddi: 15px;
+}
+
 html {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(6.5px, 0.95vw, 10.7px);
+  font-size: 10.7px;
   font-weight: 600;
   color: #575757;
   line-height: 1.43;
@@ -26,6 +30,10 @@ strong {
   color: #e30613;
 }
 
+.nobreak {
+  white-space: nowrap;
+}
+
 header {
   width: 100%;
 }
@@ -38,14 +46,12 @@ main {
   max-width: 200mm;
   height: 260mm;
   background-color: white;
-  background-image: url("./img/dummy.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
 main .jn-intro {
-  padding: 4.8mm 4.8mm 0;
+  padding: var(--paddi) var(--paddi) 0;
 }
 main .jn-intro p {
   margin-bottom: 10px;
@@ -56,7 +62,7 @@ main .jn-intro h1 {
   margin-bottom: 3mm;
 }
 main .jn-main {
-  padding: 0 4.8mm;
+  padding: 0 var(--paddi);
 }
 main .jn-main h2 {
   font-size: 1rem;
@@ -72,7 +78,11 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 2mm 4.8mm 4.8mm;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 2mm var(--paddi) var(--paddi);
 }
 footer .logo {
   width: 50%;
@@ -87,11 +97,52 @@ footer .address {
 }
 
 @media only screen and (max-width : 768px) {
-  main {
+  html {
+    font-size: 10px;
+  }
+
+  strong,
+h2 {
+    letter-spacing: 0;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  main .jn-intro h1 {
+    font-size: 2.6rem;
+  }
+  main .jn-main h2 ~ h2 {
+    margin-top: 2rem;
+  }
+
+  footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 2rem;
+    padding: var(--paddi);
+  }
+  footer .logo {
+    width: 100%;
+  }
+  footer .logo img {
+    width: 80%;
+    margin-left: 10%;
+  }
+  footer .address {
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin: var(--paddi);
+    text-align: center;
+  }
+  footer .address p {
+    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
